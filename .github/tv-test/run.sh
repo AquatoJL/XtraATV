@@ -5,8 +5,8 @@ set -euo pipefail
 OUT=tv-out
 APK=${APK:-debug}
 if [ "$APK" = release ]; then PKG=com.github.razenfr.xtratv; else PKG=com.github.razenfr.xtratv.debug; fi
-mkdir -p $OUT
-adb install -r app/build/outputs/apk/$APK/*.apk > $OUT/install.log 2>&1
+mkdir -p "$OUT"
+adb install -r app/build/outputs/apk/$APK/*.apk > "$OUT/install.log" 2>&1
 grep -q 'Success' $OUT/install.log
 adb shell settings put global window_animation_scale 0.5
 adb logcat -c
@@ -51,13 +51,13 @@ while read -r cmd arg rest <&3; do
 done 3< ".github/tv-test/${STEPS:-steps.txt}"
 adb logcat -d -b crash > $OUT/crash.log 2>&1
 echo "=== FOCUS ==="
-cat $OUT/focus.log
+cat "$OUT/focus.log" 2>/dev/null || true
 echo "=== SCRIPTS ==="
-cat $OUT/script.log 2>/dev/null
+cat "$OUT/script.log" 2>/dev/null || true
 echo "=== TV LOG ==="
 adb logcat -d -s XtraTv:D | tail -120
 echo "=== CRASHES ==="
-grep -E "FATAL|Exception|at com.github" $OUT/crash.log | head -40
+grep -E "FATAL|Exception|at com.github" "$OUT/crash.log" | head -40 || true
 adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > $OUT/logcat.log 2>&1 || true
 
 # A green emulator action is meaningful only if the app stayed alive and the scenario produced evidence.
