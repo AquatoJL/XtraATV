@@ -64,5 +64,5 @@ jobs:
       - name: Upload release APK
         uses: actions/upload-artifact@v7
         with:
-          name: xtratv-firetv-arm-check
+          name: twitch-by-jordan-firetv-arm-check
           path: app/build/outputs/apk/release/app-release.apk

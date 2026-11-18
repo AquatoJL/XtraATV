@@ -21,12 +21,14 @@ android {
             storePassword = "123456"
         }
     }
+    // Internal source namespace retained for the existing Kotlin packages and generated bindings.
+    // The installable app identity is the separate applicationId below.
     namespace = "com.github.andreyasadchy.xtra"
     compileSdk = 37
 
     defaultConfig {
-        // own package: installs next to the original Xtra
-        applicationId = "com.github.razenfr.xtratv"
+        // Unique application ID for Twitch by Jordan
+        applicationId = "com.github.twitchjordan"
         minSdk = 24
         targetSdk = 37
         versionCode = 159

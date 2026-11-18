@@ -1,7 +1,10 @@
-# Xtra TV 1.4.4
+# Twitch by Jordan 1.4.4
+
+### Important install note
+- The Android application ID is now `com.github.twitchjordan`. It is separate from test builds using the previous `com.github.twitch_jordan` ID. Install it as a new app; login and local settings from those previous builds are not migrated automatically.
 
 ### New
-- **Customizable *Other streams* & *Multi-stream* tabs**: choose, reorder, hide, or add any game/category or language tab in *Settings → Xtra TV → Other streams & Multi-stream tabs*, including **Recommended for you** (`RELEVANCE` sort, enabled by default when logged in).
+- **Customizable *Other streams* & *Multi-stream* tabs**: choose, reorder, hide, or add any game/category or language tab in *Settings → Twitch by Jordan → Other streams & Multi-stream tabs*, including **Recommended for you** (`RELEVANCE` sort, enabled by default when logged in).
 - **Adblock Swap & HTTP Proxy in the player panel**: the *Ad blocker & proxies* panel now explicitly shows **Swap Adblock** (including when active by default) as well as the **HTTP Proxy** toggle, proxy list, and shortcut to proxy settings.
 - **Audio normalization in Multi-stream**: when **Audio compressor** is enabled in the base player settings, multi-stream tiles automatically apply the same `DynamicsProcessing` audio normalization on the active audio stream.
 - **Smooth live catch-up**: when paused or rewound behind live on a stream, playback speed (`1.25x` / `1.5x`…) becomes available in the player menu and automatically resets to `1.0x` once caught up to the live edge without altering your saved VOD speed.
@@ -12,4 +15,4 @@
 - **Animated emotes freezing in chat**: fixed `Drawable.Callback` garbage collection, absolute `uptimeMillis` frame scheduling delays, shared cached drawable collisions across rows, and `LayerDrawable` overlay emote callbacks so animated GIF/WebP emotes keep playing smoothly.
 
 ### Install
-Download `XtraTV-1.4.4-tv.apk` below and install it over the previous version, your settings and account are kept.
+Download `TwitchByJordan-1.4.4-tv.apk` below and install it. Updates to this package keep their app data; moving from earlier test builds with a different application ID requires a fresh sign-in and setup.

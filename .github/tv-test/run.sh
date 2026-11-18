@@ -1,11 +1,13 @@
 #!/bin/bash
 # Drives the app on an Android TV emulator with D-pad key events, following .github/tv-test/steps.txt.
+set -euo pipefail
 # Each "shot" saves a screenshot and the currently focused view to tv-out/.
 OUT=tv-out
 APK=${APK:-debug}
-if [ "$APK" = release ]; then PKG=com.github.razenfr.xtratv; else PKG=com.github.razenfr.xtratv.debug; fi
-mkdir -p $OUT
-adb install -r app/build/outputs/apk/$APK/*.apk > $OUT/install.log 2>&1
+if [ "$APK" = release ]; then PKG=com.github.twitch_jordan; else PKG=com.github.twitch_jordan.debug; fi
+mkdir -p "$OUT"
+adb install -r app/build/outputs/apk/$APK/*.apk > "$OUT/install.log" 2>&1
+grep -q 'Success' "$OUT/install.log"
 adb shell settings put global window_animation_scale 0.5
 adb logcat -c
 adb shell am start -n $PKG/com.github.andreyasadchy.xtra.ui.main.MainActivity
@@ -47,14 +49,35 @@ while read -r cmd arg rest <&3; do
       ;;
   esac
 done 3< ".github/tv-test/${STEPS:-steps.txt}"
-adb logcat -d -b crash > $OUT/crash.log 2>&1
-echo "=== FOCUS ==="
-cat $OUT/focus.log
-echo "=== SCRIPTS ==="
-cat $OUT/script.log 2>/dev/null
-echo "=== TV LOG ==="
-adb logcat -d -s XtraTv:D | tail -120
-echo "=== CRASHES ==="
-grep -E "FATAL|Exception|at com.github" $OUT/crash.log | head -40
-adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > $OUT/logcat.log 2>&1
-exit 0
+adb logcat -d -b crash > "$OUT/crash.log" 2>&1 || true
+
+# Diagnostics must never mask the actual validation result.
+(
+  set +e
+  set +o pipefail
+  echo "=== FOCUS ==="
+  cat "$OUT/focus.log" 2>/dev/null
+  echo "=== SCRIPTS ==="
+  cat "$OUT/script.log" 2>/dev/null
+  echo "=== TV LOG ==="
+  adb logcat -d -s XtraTv:D | tail -120
+  echo "=== CRASHES ==="
+  grep -E "FATAL|Exception|at com.github" "$OUT/crash.log" | head -40
+  adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > "$OUT/logcat.log" 2>&1
+) || true
+
+# A green emulator action is meaningful only if the app stayed alive and the scenario produced evidence.
+if ! adb shell pidof "$PKG" 2>/dev/null | grep -qE "[0-9]+"; then
+  echo "::error::The TV app process is no longer running after the UI scenario."
+  exit 1
+fi
+shots=$(find "$OUT" -maxdepth 1 -type f -name '*.png' | wc -l)
+if [ "$shots" -lt 8 ]; then
+  echo "::error::Expected at least 8 UI screenshots, got $shots."
+  exit 1
+fi
+if grep -Eq "FATAL EXCEPTION|Process: $PKG" "$OUT/crash.log"; then
+  echo "::error::Android crash detected during the TV UI scenario."
+  exit 1
+fi
+echo "TV UI validation passed: app process alive, $shots screenshots, no fatal crash."
