@@ -540,7 +540,7 @@
     <string name="external_login_message">You can log in using an external browser.\n\nFollow these steps:\n• Press \"Open URL\" to open the login page.\n• Login to your account and press \"Authorize\".\n• A page with an error should appear. Copy the URL of that page, paste the URL into the box below and press \"OK\".</string>
     <string name="loading">Memuat…</string>
     <string name="copy_code">Salin kode</string>
-    <string name="external_tv_login_message">Untuk mengakses semua fitur, masuk sebagai perangkat Android TV.\n\nLangkah:\n• Salin kode yang tampil di layar.\n• Tekan tombol \"Buka URL\".\n• Masukkan kode lalu tekan \"Aktifkan\".\n• Tekan \"Izinkan\".\n• Kembali ke Xtra lalu tekan \"Berikutnya\".</string>
+    <string name="external_tv_login_message">Untuk mengakses semua fitur, masuk sebagai perangkat Android TV.\n\nLangkah:\n• Salin kode yang tampil di layar.\n• Tekan tombol \"Buka URL\".\n• Masukkan kode lalu tekan \"Aktifkan\".\n• Tekan \"Izinkan\".\n• Kembali ke Twitch by Jordan lalu tekan \"Berikutnya\".</string>
     <string name="activate_notifications_when_following">Aktifkan notifikasi saat mengikuti</string>
     <string name="account">Akun</string>
     <string name="downloading_update_progress">Mengunduh pembaruan… %1$s / %2$s</string>
