@@ -33,8 +33,8 @@ import com.github.andreyasadchy.xtra.R
  */
 object TvAbout {
 
-    const val CREDIT_TEXT = "XtraTV forked from https://github.com/crackededed/Xtra by razeN with AI"
-    const val GITHUB_URL = "https://github.com/razeNFR/XtraATV"
+    const val CREDIT_TEXT = "Twitch by Jordan — developed by Jordan (AquatoJL), based on XtraATV by razeNFR and Xtra by AndreyAsadchy"
+    const val GITHUB_URL = "https://github.com/AquatoJL/XtraATV"
     const val DISCORD_URL = "https://discord.gg/SgKqrW73P4"
 
     fun deviceSummary(): String {
