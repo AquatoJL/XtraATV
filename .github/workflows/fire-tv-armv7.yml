@@ -1,4 +1,5 @@
 name: Fire TV ARMv7 compatibility
+# Checks Fire OS 7 / Android 11 minimum SDK and native 32-bit libraries.
 
 on:
   push:
