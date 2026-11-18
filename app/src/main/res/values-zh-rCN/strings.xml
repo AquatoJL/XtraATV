@@ -539,7 +539,7 @@
     <string name="external_login_message">You can log in using an external browser.\n\nFollow these steps:\n• Press \"Open URL\" to open the login page.\n• Login to your account and press \"Authorize\".\n• A page with an error should appear. Copy the URL of that page, paste the URL into the box below and press \"OK\".</string>
     <string name="loading">正在加载…</string>
     <string name="copy_code">复制代码</string>
-    <string name="external_tv_login_message">要使用全部功能，请以 Android TV 设备登录。\n\n步骤：\n• 复制屏幕上显示的代码。\n• 按\"打开网址\"按钮。\n• 输入代码并按\"激活\"。\n• 按\"授权\"。\n• 返回 Xtra 并按\"下一步\"。</string>
+    <string name="external_tv_login_message">要使用全部功能，请以 Android TV 设备登录。\n\n步骤：\n• 复制屏幕上显示的代码。\n• 按\"打开网址\"按钮。\n• 输入代码并按\"激活\"。\n• 按\"授权\"。\n• 返回 Twitch by Jordan 并按\"下一步\"。</string>
     <string name="activate_notifications_when_following">关注时开启通知</string>
     <string name="account">账号</string>
     <string name="downloading_update_progress">正在下载更新… %1$s / %2$s</string>
