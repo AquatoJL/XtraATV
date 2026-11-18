@@ -2,7 +2,7 @@ name: Build and TV UI test
 
 on:
   push:
-    branches-ignore: [ master ]
+    branches: [ master ]
   workflow_dispatch:
     inputs:
       steps:
