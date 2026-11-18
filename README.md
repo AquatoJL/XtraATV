@@ -18,7 +18,7 @@ Get the latest APK from this fork's [Releases](https://github.com/AquatoJL/XtraA
 
 On a TV, the easiest way is the **Downloader** app (or any file manager): download the APK and install it (allow the installation of unknown apps for that app). From a computer: `adb install TwitchByJordan.apk`.
 
-Twitch by Jordan has its own package name, so it installs next to the original Xtra.
+Twitch by Jordan uses the Android application ID `com.github.twitchjordan`, separate from the original Xtra app. This package-ID change also means builds using the previous `com.github.twitch_jordan` ID install as a separate app; sign in again and reconfigure settings if moving from one of those builds.
 
 ## Features
 
