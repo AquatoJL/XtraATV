@@ -25,8 +25,8 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        // own package: installs next to the original Xtra
-        applicationId = "com.github.razenfr.xtratv"
+        // Unique application ID for Twitch by Jordan
+        applicationId = "com.github.twitch_jordan"
         minSdk = 24
         targetSdk = 37
         versionCode = 159
