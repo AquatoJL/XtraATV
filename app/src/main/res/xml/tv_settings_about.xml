@@ -5,7 +5,7 @@
 
     <Preference
         android:key="about_app"
-        android:summary="Fork developed and maintained by Jordan (AquatoJL). Based on XtraATV by razeNFR and Xtra by AndreyAsadchy."
+        android:summary="Twitch by Jordan — developed and maintained by Jordan (AquatoJL). Based on XtraATV by razeNFR and Xtra by AndreyAsadchy."
         android:title="@string/app_name"
         app:iconSpaceReserved="false"
         app:singleLineTitle="false" />
