@@ -5,14 +5,14 @@
 
     <Preference
         android:key="about_app"
-        android:summary="XtraTV forked from https://github.com/crackededed/Xtra by razeN with AI"
+        android:summary="Fork developed and maintained by Jordan (AquatoJL). Based on XtraATV by razeNFR and Xtra by AndreyAsadchy."
         android:title="@string/app_name"
         app:iconSpaceReserved="false"
         app:singleLineTitle="false" />
 
     <Preference
         android:key="about_github"
-        android:summary="https://github.com/razeNFR/XtraATV"
+        android:summary="https://github.com/AquatoJL/XtraATV"
         android:title="@string/tv_about_github"
         app:iconSpaceReserved="false"
         app:singleLineTitle="false" />
