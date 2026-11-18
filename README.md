@@ -14,7 +14,7 @@ It brings a full TV interface designed for the remote, a built-in ad blocker (Pr
 
 ## Download
 
-Get the latest APK from the [Releases](https://github.com/razeNFR/XtraATV/releases/latest) page.
+Get the latest APK from this fork's [Releases](https://github.com/AquatoJL/XtraATV/releases/latest) page.
 
 On a TV, the easiest way is the **Downloader** app (or any file manager): download the APK and install it (allow the installation of unknown apps for that app). From a computer: `adb install XtraTV.apk`.
 
@@ -66,9 +66,12 @@ Xtra TV can open live streams, channel pages, VODs (with timestamps), clips, and
 ```
 The APK is generated in `app/build/outputs/apk/release/`.
 
-## Credits
+## Developer & Credits
 
-Xtra TV is a fork of [Xtra](https://github.com/crackededed/Xtra) (originally by [AndreyAsadchy](https://github.com/AndreyAsadchy/Xtra)).
+**Developer and maintainer of this fork:** Jordan ([AquatoJL](https://github.com/AquatoJL)).
+
+Xtra TV is based on [XtraATV](https://github.com/razeNFR/XtraATV), which is a fork of [Xtra](https://github.com/crackededed/Xtra), originally created by [AndreyAsadchy](https://github.com/AndreyAsadchy). Original project authors and contributors retain their respective attribution.
+
 The ad blocker follows the logic of the [VAFT userscript](https://github.com/pixeltris/TwitchAdSolutions).
 
 ## License
