@@ -21,6 +21,8 @@ android {
             storePassword = "123456"
         }
     }
+    // Internal source namespace retained for the existing Kotlin packages and generated bindings.
+    // The installable app identity is the separate applicationId below.
     namespace = "com.github.andreyasadchy.xtra"
     compileSdk = 37
 
