@@ -16,19 +16,19 @@ Twitch by Jordan registers `android.intent.action.VIEW` for `twitch.tv` and `*.t
 
 ## Supported URLs
 
-### 1. Play a Live Stream Directly (`?twitch_by_jordan_play=1`)
+### 1. Play a Live Stream Directly (`?xtratv_play=1`)
 
 Opens the video player immediately on the specified channel's live stream:
 
 ```text
-https://www.twitch.tv/<channel_login>?twitch_by_jordan_play=1
+https://www.twitch.tv/<channel_login>?xtratv_play=1
 ```
 
 Optional query parameters (pre-populated in the HUD while stream metadata loads):
 
 | Parameter | Description | Example |
 | :--- | :--- | :--- |
-| `twitch_by_jordan_play` | Must be `1` to start playback immediately instead of opening the channel page | `1` |
+| `xtratv_play` | Must be `1` to start playback immediately instead of opening the channel page | `1` |
 | `name` | Channel display name | `Kamet0` |
 | `title` | Stream title | `LEC%20Watchparty` |
 | `game` | Category / game name | `League%20of%20Legends` |
@@ -96,7 +96,7 @@ adb shell am start -n com.github.twitch_jordan/com.github.andreyasadchy.xtra.ui.
 
 # Start playing a live stream immediately
 adb shell am start -a android.intent.action.VIEW \
-  -d "https://www.twitch.tv/kamet0?twitch_by_jordan_play=1" \
+  -d "https://www.twitch.tv/kamet0?xtratv_play=1" \
   -n com.github.twitch_jordan/com.github.andreyasadchy.xtra.ui.main.MainActivity
 
 # Open a streamer's channel page (VODs & clips)
@@ -118,7 +118,7 @@ adb shell am start -a android.intent.action.VIEW \
 ### Android Intent URI (tvQuickActions, Button Mapper, Custom Launchers)
 
 ```text
-intent://www.twitch.tv/kamet0?twitch_by_jordan_play=1#Intent;scheme=https;action=android.intent.action.VIEW;package=com.github.twitch_jordan;component=com.github.twitch_jordan/com.github.andreyasadchy.xtra.ui.main.MainActivity;end
+intent://www.twitch.tv/kamet0?xtratv_play=1#Intent;scheme=https;action=android.intent.action.VIEW;package=com.github.twitch_jordan;component=com.github.twitch_jordan/com.github.andreyasadchy.xtra.ui.main.MainActivity;end
 ```
 
 ### Home Assistant (Android TV Remote / ADB Integration)
@@ -130,7 +130,7 @@ action: remote.turn_on
 target:
   entity_id: remote.android_tv
 data:
-  activity: "https://www.twitch.tv/kamet0?twitch_by_jordan_play=1"
+  activity: "https://www.twitch.tv/kamet0?xtratv_play=1"
 ```
 
 Or targeting Twitch by Jordan explicitly via `androidtv.adb_command`:
@@ -142,6 +142,6 @@ target:
 data:
   command: >-
     am start -a android.intent.action.VIEW
-    -d "https://www.twitch.tv/kamet0?twitch_by_jordan_play=1"
+    -d "https://www.twitch.tv/kamet0?xtratv_play=1"
     -n com.github.twitch_jordan/com.github.andreyasadchy.xtra.ui.main.MainActivity
 ```
