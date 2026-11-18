@@ -4,7 +4,7 @@ set -euo pipefail
 # Each "shot" saves a screenshot and the currently focused view to tv-out/.
 OUT=tv-out
 APK=${APK:-debug}
-if [ "$APK" = release ]; then PKG=com.github.razenfr.xtratv; else PKG=com.github.razenfr.xtratv.debug; fi
+if [ "$APK" = release ]; then PKG=com.github.twitch_jordan; else PKG=com.github.twitch_jordan.debug; fi
 mkdir -p "$OUT"
 adb install -r app/build/outputs/apk/$APK/*.apk > "$OUT/install.log" 2>&1
 grep -q 'Success' "$OUT/install.log"
