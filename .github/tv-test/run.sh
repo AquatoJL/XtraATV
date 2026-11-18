@@ -49,16 +49,22 @@ while read -r cmd arg rest <&3; do
       ;;
   esac
 done 3< ".github/tv-test/${STEPS:-steps.txt}"
-adb logcat -d -b crash > $OUT/crash.log 2>&1
-echo "=== FOCUS ==="
-cat "$OUT/focus.log" 2>/dev/null || true
-echo "=== SCRIPTS ==="
-cat "$OUT/script.log" 2>/dev/null || true
-echo "=== TV LOG ==="
-adb logcat -d -s XtraTv:D | tail -120 || true
-echo "=== CRASHES ==="
-grep -E "FATAL|Exception|at com.github" "$OUT/crash.log" | head -40 || true
-adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > "$OUT/logcat.log" 2>&1 || true
+adb logcat -d -b crash > "$OUT/crash.log" 2>&1 || true
+
+# Diagnostics must never mask the actual validation result.
+(
+  set +e
+  set +o pipefail
+  echo "=== FOCUS ==="
+  cat "$OUT/focus.log" 2>/dev/null
+  echo "=== SCRIPTS ==="
+  cat "$OUT/script.log" 2>/dev/null
+  echo "=== TV LOG ==="
+  adb logcat -d -s XtraTv:D | tail -120
+  echo "=== CRASHES ==="
+  grep -E "FATAL|Exception|at com.github" "$OUT/crash.log" | head -40
+  adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > "$OUT/logcat.log" 2>&1
+) || true
 
 # A green emulator action is meaningful only if the app stayed alive and the scenario produced evidence.
 if ! adb shell pidof "$PKG" 2>/dev/null | grep -qE "[0-9]+"; then
