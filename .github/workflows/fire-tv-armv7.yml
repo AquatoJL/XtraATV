@@ -27,21 +27,26 @@ jobs:
       - name: Build release APK
         run: ./gradlew --no-daemon clean assembleRelease
 
-      - name: Verify Android manifest requirements
+      - name: Verify Android minimum SDK
         run: |
-          APK=app/build/outputs/apk/release/app-release.apk
-          test -f "$APK"
-          SDK=$(sed -n 's/^[[:space:]]*minSdk = \\([0-9][0-9]*\\)$/\\1/p' app/build.gradle.kts | head -n1)
-          echo "Configured minSdk=$SDK"
-          test -n "$SDK"
-          test "$SDK" -le 30
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          source = Path("app/build.gradle.kts").read_text()
+          match = re.search(r"minSdk\s*=\s*(\d+)", source)
+          assert match, "minSdk declaration not found"
+          sdk = int(match.group(1))
+          print(f"Configured minSdk={sdk}")
+          assert sdk <= 30, f"minSdk {sdk} is above Fire OS / Android 11 API 30"
+          PY
 
       - name: Inspect native ABI payload
         shell: bash
         run: |
           APK=app/build/outputs/apk/release/app-release.apk
+          test -f "$APK"
           unzip -Z1 "$APK" > apk-files.txt
-          grep -E '^lib/[^/]+/[^/]+\\.so$' apk-files.txt > native-libs.txt || true
+          grep -E '^lib/[^/]+/[^/]+\.so$' apk-files.txt > native-libs.txt || true
           if [ ! -s native-libs.txt ]; then
             echo "No packaged native .so libraries: APK has no native ABI restriction."
             exit 0
@@ -53,9 +58,6 @@ jobs:
           else
             echo "::error::APK contains native libraries but no armeabi-v7a payload. It is not safe to claim compatibility with 32-bit Fire TV devices."
             exit 1
-          fi
-          if grep -q '^lib/arm64-v8a/' native-libs.txt; then
-            echo "arm64-v8a payload is also present."
           fi
 
       - name: Upload release APK
