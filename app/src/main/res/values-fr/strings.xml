@@ -539,7 +539,7 @@
     <string name="external_login_message">You can log in using an external browser.\n\nFollow these steps:\n• Press \"Open URL\" to open the login page.\n• Login to your account and press \"Authorize\".\n• A page with an error should appear. Copy the URL of that page, paste the URL into the box below and press \"OK\".</string>
     <string name="loading">Chargement…</string>
     <string name="copy_code">Copier le code</string>
-    <string name="external_tv_login_message">Pour accéder à toutes les fonctions, connecte-toi comme un appareil Android TV.\n\nÉtapes :\n• Copie le code affiché à l\'écran.\n• Appuie sur le bouton \"Ouvrir l\'URL\".\n• Saisis le code et appuie sur \"Activer\".\n• Appuie sur \"Autoriser\".\n• Reviens dans Xtra et appuie sur \"Suivant\".</string>
+    <string name="external_tv_login_message">Pour accéder à toutes les fonctions, connecte-toi comme un appareil Android TV.\n\nÉtapes :\n• Copie le code affiché à l\'écran.\n• Appuie sur le bouton \"Ouvrir l\'URL\".\n• Saisis le code et appuie sur \"Activer\".\n• Appuie sur \"Autoriser\".\n• Reviens dans Twitch by Jordan et appuie sur \"Suivant\".</string>
     <string name="activate_notifications_when_following">Activer les notifications en suivant une chaîne</string>
     <string name="account">Compte</string>
     <string name="downloading_update_progress">Téléchargement de la mise à jour… %1$s / %2$s</string>
