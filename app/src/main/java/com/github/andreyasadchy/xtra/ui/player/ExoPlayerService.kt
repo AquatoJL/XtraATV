@@ -1525,7 +1525,9 @@ class ExoPlayerService : BasePlaybackService() {
                     fallbackH264 = fallbackH264ForStream,
                 )
                 if (!outcome.channelIsLive) {
-                    return@launch
+                    // A failed metadata request is currently indistinguishable from an offline channel.
+                    // Retry on the next poll instead of permanently disabling the VOD upgrade.
+                    return@repeat
                 }
                 val vod = outcome.vod
                 if (vod != null && vod.vodDurationMs >= TvExperimentalAdblock.UPGRADE_MIN_VOD_DURATION_MS) {
