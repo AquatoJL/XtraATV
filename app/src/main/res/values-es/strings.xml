@@ -592,7 +592,7 @@
     <string name="tv_more_actions">Más acciones</string>
     <string name="tv_account">Cuenta</string>
     <string name="tv_stream_preview">Vista previa en directo del stream seleccionado (TV)</string>
-    <string name="xtratv_settings">Ajustes de Xtra TV</string>
+    <string name="xtratv_settings">Ajustes de Twitch by Jordan</string>
     <string name="xtratv_settings_summary">Bloqueador de anuncios, ajuste de fotogramas, vistas previas, inicio y atajos del mando</string>
     <string name="tv_preview_sound">Sonido de las vistas previas</string>
     <string name="close_player">Cerrar</string>
@@ -671,7 +671,7 @@
     <string name="tv_back_audio">Solo audio</string>
     <string name="tv_dpad_up_down">Atajos arriba y abajo en directos y VODs</string>
     <string name="tv_dpad_up_down_summary">Con los controles ocultos: arriba muestra los otros streams, abajo muestra u oculta el chat</string>
-    <string name="tv_1440p_warning">⚠ El 1440p no funciona con proxies públicos (Luminous, etc.), limitados a 1080p. Para 1440p desactiva el proxy personalizado y usa el bloqueador de anuncios (ajustes de Xtra TV), o usa tu propio proxy compatible con 1440p.</string>
+    <string name="tv_1440p_warning">⚠ El 1440p no funciona con proxies públicos (Luminous, etc.), limitados a 1080p. Para 1440p desactiva el proxy personalizado y usa el bloqueador de anuncios (ajustes de Twitch by Jordan), o usa tu propio proxy compatible con 1440p.</string>
     <string name="tv_login_with_code">Con un código en twitch.tv/activate</string>
     <string name="tv_login_with_page">Con la página de inicio de sesión de Twitch (necesaria para 1440p)</string>
     <string name="tv_login_code_help">En tu móvil u ordenador, ve a twitch.tv/activate y escribe este código. El inicio de sesión sigue solo. El 1440p necesita iniciar sesión con la página de Twitch.</string>
@@ -816,7 +816,7 @@
     <string name="tv_pip_pos_c">Centro</string>
     <string name="tv_pip_pos_mr">Centro a la derecha</string>
     <string name="tv_pip_pos_bc">Abajo en el centro</string>
-    <string name="tv_enable_unknown_sources">Autoriza Xtra TV en Instalar aplicaciones desconocidas y pulsa Atrás para iniciar la actualización</string>
+    <string name="tv_enable_unknown_sources">Autoriza Twitch by Jordan en Instalar aplicaciones desconocidas y pulsa Atrás para iniciar la actualización</string>
     <string name="tv_pip_size">Tamaño</string>
     <string name="tv_pip_size_small">Pequeña</string>
     <string name="tv_pip_size_medium">Mediana</string>
@@ -861,7 +861,7 @@
     <string name="tv_proxy_all_settings">Todos los ajustes de proxys…</string>
     <string name="tv_focus_switch">Cambiar de página sin OK</string>
     <string name="tv_focus_switch_summary">Las pestañas y el menú lateral muestran su página en cuanto tienen el foco</string>
-    <string name="tv_update_title_version">Xtra TV %1$s está disponible</string>
+    <string name="tv_update_title_version">Twitch by Jordan %1$s está disponible</string>
     <string name="tv_update_now">Actualizar</string>
     <string name="tv_update_ignore">Ignorar</string>
     <string name="tv_proxy_add">Añadir un proxy</string>
@@ -1192,7 +1192,7 @@
     <string name="tv_remote_action_pip_close">Ventana pequeña: cerrar</string>
     <string name="tv_adblock_and_proxies_title">Bloqueador de anuncios y proxys</string>
     <string name="tv_adblock_and_proxies_subtitle">Bloqueador de anuncios experimental o proxys HLS personalizados para directos</string>
-    <string name="tv_update_install_blocked">Android bloqueó la instalación. Permite «Instalar aplicaciones desconocidas» para Xtra TV en los ajustes del sistema o descarga la actualización en el navegador.</string>
+    <string name="tv_update_install_blocked">Android bloqueó la instalación. Permite «Instalar aplicaciones desconocidas» para Twitch by Jordan en los ajustes del sistema o descarga la actualización en el navegador.</string>
     <string name="tv_update_try_again">Reintentar</string>
     <string name="tv_remote_action_pip_swap_default">Ventana pequeña: intercambiar directos (predeterminado)</string>
     <string name="tv_remote_action_show_controls">Mostrar controles</string>
