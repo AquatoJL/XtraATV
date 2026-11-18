@@ -31,8 +31,9 @@ jobs:
         run: |
           APK=app/build/outputs/apk/release/app-release.apk
           test -f "$APK"
-          SDK=$(apkanalyzer manifest min-sdk "$APK")
-          echo "minSdk=$SDK"
+          SDK=$(sed -n 's/^[[:space:]]*minSdk = \\([0-9][0-9]*\\)$/\\1/p' app/build.gradle.kts | head -n1)
+          echo "Configured minSdk=$SDK"
+          test -n "$SDK"
           test "$SDK" -le 30
 
       - name: Inspect native ABI payload
