@@ -587,7 +587,7 @@
     <string name="tv_more_actions">Plus d\'actions</string>
     <string name="tv_account">Compte</string>
     <string name="tv_stream_preview">Aperçu en direct du stream sélectionné (TV)</string>
-    <string name="xtratv_settings">Paramètres Xtra TV</string>
+    <string name="xtratv_settings">Paramètres Twitch by Jordan</string>
     <string name="xtratv_settings_summary">Bloqueur de pubs, framerate matching, aperçus, accueil et raccourcis de la télécommande</string>
     <string name="tv_preview_sound">Son des aperçus</string>
     <string name="close_player">Fermer</string>
@@ -666,7 +666,7 @@
     <string name="tv_back_audio">Audio seul</string>
     <string name="tv_dpad_up_down">Raccourcis haut et bas dans les streams et VOD</string>
     <string name="tv_dpad_up_down_summary">Quand les commandes sont cachées : haut affiche les autres streams, bas affiche ou cache le chat</string>
-    <string name="tv_1440p_warning">⚠ Le 1440p ne fonctionne pas avec les proxys publics (Luminous, etc.), limités à 1080p. Pour le 1440p, désactive le proxy custom et utilise le bloqueur de pub (Paramètres Xtra TV), ou utilise ton propre proxy compatible 1440p.</string>
+    <string name="tv_1440p_warning">⚠ Le 1440p ne fonctionne pas avec les proxys publics (Luminous, etc.), limités à 1080p. Pour le 1440p, désactive le proxy custom et utilise le bloqueur de pub (Paramètres Twitch by Jordan), ou utilise ton propre proxy compatible 1440p.</string>
     <string name="tv_login_with_code">Avec un code sur twitch.tv/activate</string>
     <string name="tv_login_with_page">Avec la page de connexion Twitch (nécessaire pour le 1440p)</string>
     <string name="tv_login_code_help">Sur ton téléphone ou ordinateur, va sur twitch.tv/activate et tape ce code. La connexion se fait toute seule. Le 1440p demande la connexion avec la page Twitch.</string>
@@ -811,7 +811,7 @@
     <string name="tv_pip_pos_c">Milieu</string>
     <string name="tv_pip_pos_mr">Milieu droite</string>
     <string name="tv_pip_pos_bc">Milieu bas</string>
-    <string name="tv_enable_unknown_sources">Autorisez Xtra TV dans les sources inconnues, puis appuyez sur Retour pour lancer la mise à jour</string>
+    <string name="tv_enable_unknown_sources">Autorisez Twitch by Jordan dans les sources inconnues, puis appuyez sur Retour pour lancer la mise à jour</string>
     <string name="tv_pip_size">Taille</string>
     <string name="tv_pip_size_small">Petite</string>
     <string name="tv_pip_size_medium">Moyenne</string>
@@ -856,7 +856,7 @@
     <string name="tv_proxy_all_settings">Tous les réglages des proxys…</string>
     <string name="tv_focus_switch">Changer de page sans appuyer sur OK</string>
     <string name="tv_focus_switch_summary">Les onglets et le menu latéral affichent leur page dès qu\'ils ont le focus</string>
-    <string name="tv_update_title_version">Xtra TV %1$s est disponible</string>
+    <string name="tv_update_title_version">Twitch by Jordan %1$s est disponible</string>
     <string name="tv_update_now">Mettre à jour</string>
     <string name="tv_update_ignore">Ignorer</string>
     <string name="tv_proxy_add">Ajouter un proxy</string>
@@ -1187,7 +1187,7 @@
     <string name="tv_remote_action_pip_close">Petite fenêtre : fermer</string>
     <string name="tv_adblock_and_proxies_title">Bloqueur de pub et proxys</string>
     <string name="tv_adblock_and_proxies_subtitle">Bloqueur de pub expérimental ou proxys HLS personnalisés pour les lives</string>
-    <string name="tv_update_install_blocked">Android a bloqué l\'installation. Autorisez « Installer des applis inconnues » pour Xtra TV dans les paramètres système, ou téléchargez la mise à jour via le navigateur.</string>
+    <string name="tv_update_install_blocked">Android a bloqué l\'installation. Autorisez « Installer des applis inconnues » pour Twitch by Jordan dans les paramètres système, ou téléchargez la mise à jour via le navigateur.</string>
     <string name="tv_update_try_again">Réessayer</string>
     <string name="tv_remote_action_pip_swap_default">Petite fenêtre : inverser les streams (par défaut)</string>
     <string name="tv_remote_action_show_controls">Afficher les contrôles</string>
