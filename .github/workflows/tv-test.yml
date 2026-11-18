@@ -35,6 +35,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v6
       with:
         cache-provider: 'basic'
+        cache-read-only: false
     - name: Check the translations of the TV strings
       run: python3 .github/scripts/check_translations.py
     - name: Build with Gradle
