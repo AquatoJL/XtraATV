@@ -1,5 +1,8 @@
 # Twitch by Jordan 1.4.4
 
+### Important install note
+- The Android application ID is now `com.github.twitchjordan`. It is separate from test builds using the previous `com.github.twitch_jordan` ID. Install it as a new app; login and local settings from those previous builds are not migrated automatically.
+
 ### New
 - **Customizable *Other streams* & *Multi-stream* tabs**: choose, reorder, hide, or add any game/category or language tab in *Settings → Twitch by Jordan → Other streams & Multi-stream tabs*, including **Recommended for you** (`RELEVANCE` sort, enabled by default when logged in).
 - **Adblock Swap & HTTP Proxy in the player panel**: the *Ad blocker & proxies* panel now explicitly shows **Swap Adblock** (including when active by default) as well as the **HTTP Proxy** toggle, proxy list, and shortcut to proxy settings.
@@ -12,4 +15,4 @@
 - **Animated emotes freezing in chat**: fixed `Drawable.Callback` garbage collection, absolute `uptimeMillis` frame scheduling delays, shared cached drawable collisions across rows, and `LayerDrawable` overlay emote callbacks so animated GIF/WebP emotes keep playing smoothly.
 
 ### Install
-Download `TwitchByJordan-1.4.4-tv.apk` below and install it over the previous version, your settings and account are kept.
+Download `TwitchByJordan-1.4.4-tv.apk` below and install it. Updates to this package keep their app data; moving from earlier test builds with a different application ID requires a fresh sign-in and setup.
