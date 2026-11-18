@@ -54,7 +54,6 @@ jobs:
         sudo udevadm trigger --name-match=kvm
     - name: Run Android TV emulator UI script
       uses: reactivecircus/android-emulator-runner@v2
-      continue-on-error: true
       with:
         api-level: 34
         target: android-tv
