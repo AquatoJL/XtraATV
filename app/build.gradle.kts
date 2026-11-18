@@ -28,7 +28,7 @@ android {
 
     defaultConfig {
         // Unique application ID for Twitch by Jordan
-        applicationId = "com.github.twitch_jordan"
+        applicationId = "com.github.twitchjordan"
         minSdk = 24
         targetSdk = 37
         versionCode = 159
