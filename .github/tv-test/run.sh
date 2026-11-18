@@ -7,7 +7,7 @@ APK=${APK:-debug}
 if [ "$APK" = release ]; then PKG=com.github.razenfr.xtratv; else PKG=com.github.razenfr.xtratv.debug; fi
 mkdir -p "$OUT"
 adb install -r app/build/outputs/apk/$APK/*.apk > "$OUT/install.log" 2>&1
-grep -q 'Success' $OUT/install.log
+grep -q 'Success' "$OUT/install.log"
 adb shell settings put global window_animation_scale 0.5
 adb logcat -c
 adb shell am start -n $PKG/com.github.andreyasadchy.xtra.ui.main.MainActivity
@@ -55,13 +55,13 @@ cat "$OUT/focus.log" 2>/dev/null || true
 echo "=== SCRIPTS ==="
 cat "$OUT/script.log" 2>/dev/null || true
 echo "=== TV LOG ==="
-adb logcat -d -s XtraTv:D | tail -120
+adb logcat -d -s XtraTv:D | tail -120 || true
 echo "=== CRASHES ==="
 grep -E "FATAL|Exception|at com.github" "$OUT/crash.log" | head -40 || true
-adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > $OUT/logcat.log 2>&1 || true
+adb logcat -d | grep -E "AndroidRuntime|FATAL|$PKG" | tail -300 > "$OUT/logcat.log" 2>&1 || true
 
 # A green emulator action is meaningful only if the app stayed alive and the scenario produced evidence.
-if ! adb shell pidof "$PKG" >/dev/null 2>&1; then
+if ! adb shell pidof "$PKG" 2>/dev/null | grep -qE "[0-9]+"; then
   echo "::error::The TV app process is no longer running after the UI scenario."
   exit 1
 fi
