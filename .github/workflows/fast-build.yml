@@ -28,6 +28,8 @@ jobs:
         cache-provider: 'basic'
     - name: Check TV translations
       run: python3 .github/scripts/check_translations.py
+    - name: Validate TV test script syntax
+      run: bash -n .github/tv-test/run.sh
     - name: Assemble debug APK
       run: ./gradlew assembleDebug
     - name: Upload debug APK
