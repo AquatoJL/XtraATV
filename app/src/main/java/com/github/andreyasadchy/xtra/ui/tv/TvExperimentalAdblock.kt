@@ -686,7 +686,9 @@ object TvExperimentalAdblock {
     ): Pair<String, String>? = coroutineScope {
         val semaphore = Semaphore(12)
         val found = MutableStateFlow<Pair<String, String>?>(null)
-        val jobs = mutableListOf<Job>()
+        // Probe coroutines can finish while the parent is still scheduling other domains.
+        // A concurrent collection keeps winner-cancellation and job registration race-free.
+        val jobs = ConcurrentHashMap.newKeySet<Job>()
         val domains = TwitchApiHelper.vodDomains.reversed()
 
         for (offset in offsets) {
