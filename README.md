@@ -1,8 +1,8 @@
-# Xtra TV
+# Twitch by Jordan
 
 <img src="docs/icon.png" align="left" width="110"/>
 
-**Xtra TV** is a Twitch player and browser made for **Android TV**, built on top of [Xtra](https://github.com/crackededed/Xtra).
+**Twitch by Jordan** is a Twitch player and browser made for **Android TV**, built on top of [Xtra](https://github.com/crackededed/Xtra).
 It brings a full TV interface designed for the remote, a built-in ad blocker (Proxy & VAFT), streams up to **1440p60**, multi-stream up to 4 channels, a live DVR timeline, and much more.
 
 <br clear="left"/>
@@ -14,11 +14,11 @@ It brings a full TV interface designed for the remote, a built-in ad blocker (Pr
 
 ## Download
 
-Get the latest APK from the [Releases](https://github.com/razeNFR/XtraATV/releases/latest) page.
+Get the latest APK from this fork's [Releases](https://github.com/AquatoJL/XtraATV/releases/latest) page.
 
-On a TV, the easiest way is the **Downloader** app (or any file manager): download the APK and install it (allow the installation of unknown apps for that app). From a computer: `adb install XtraTV.apk`.
+On a TV, the easiest way is the **Downloader** app (or any file manager): download the APK and install it (allow the installation of unknown apps for that app). From a computer: `adb install TwitchByJordan.apk`.
 
-Xtra TV has its own package name, so it installs next to the original Xtra.
+Twitch by Jordan uses the Android application ID `com.github.twitchjordan`, separate from the original Xtra app. This package-ID change also means builds using the previous test-build ID `com.github.twitch_jordan` install as a separate app; sign in again and reconfigure settings if moving from one of those builds.
 
 ## Features
 
@@ -57,7 +57,7 @@ Twitch only serves the 1440p - 4K streams to its website client with a logged-in
 
 ## Deep Links & Automation
 
-Xtra TV can open live streams, channel pages, VODs (with timestamps), clips, and categories directly from ADB, Home Assistant, tvQuickActions, or custom launchers. See [**docs/deeplinks.md**](docs/deeplinks.md) for all supported URLs and examples.
+Twitch by Jordan can open live streams, channel pages, VODs (with timestamps), clips, and categories directly from ADB, Home Assistant, tvQuickActions, or custom launchers. See [**docs/deeplinks.md**](docs/deeplinks.md) for all supported URLs and examples.
 
 ## Building
 
@@ -66,11 +66,14 @@ Xtra TV can open live streams, channel pages, VODs (with timestamps), clips, and
 ```
 The APK is generated in `app/build/outputs/apk/release/`.
 
-## Credits
+## Developer & Credits
 
-Xtra TV is a fork of [Xtra](https://github.com/crackededed/Xtra) (originally by [AndreyAsadchy](https://github.com/AndreyAsadchy/Xtra)).
+**Developer and maintainer of this fork:** Jordan ([AquatoJL](https://github.com/AquatoJL)).
+
+Twitch by Jordan is based on [XtraATV](https://github.com/razeNFR/XtraATV), which is a fork of [Xtra](https://github.com/crackededed/Xtra), originally created by [AndreyAsadchy](https://github.com/AndreyAsadchy). Original project authors and contributors retain their respective attribution.
+
 The ad blocker follows the logic of the [VAFT userscript](https://github.com/pixeltris/TwitchAdSolutions).
 
 ## License
 
-Xtra TV is licensed under the [GNU Affero General Public License v3.0](LICENSE).
+Twitch by Jordan is licensed under the [GNU Affero General Public License v3.0](LICENSE).

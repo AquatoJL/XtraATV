@@ -6,19 +6,19 @@
 
     <fragment
         android:id="@+id/rootGamesFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.games.GamesFragment">
+        android:name="com.github.twitchjordan.ui.games.GamesFragment">
         <argument
             android:name="tags"
-            app:argType="com.github.andreyasadchy.xtra.model.ui.Tag[]"
+            app:argType="com.github.twitchjordan.model.ui.Tag[]"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/tvHomeFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.tv.home.TvHomeFragment" />
+        android:name="com.github.twitchjordan.ui.tv.home.TvHomeFragment" />
     <fragment
         android:id="@+id/rootTopFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.top.TopStreamsFragment">
+        android:name="com.github.twitchjordan.ui.top.TopStreamsFragment">
         <argument
             android:name="tags"
             app:argType="string[]"
@@ -32,10 +32,10 @@
     </fragment>
     <fragment
         android:id="@+id/gamesFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.games.GamesFragment">
+        android:name="com.github.twitchjordan.ui.games.GamesFragment">
         <argument
             android:name="tags"
-            app:argType="com.github.andreyasadchy.xtra.model.ui.Tag[]"
+            app:argType="com.github.twitchjordan.model.ui.Tag[]"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
@@ -44,7 +44,7 @@
         app:destination="@id/gamesFragment" />
     <fragment
         android:id="@+id/topFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.top.TopStreamsFragment">
+        android:name="com.github.twitchjordan.ui.top.TopStreamsFragment">
         <argument
             android:name="tags"
             app:argType="string[]"
@@ -61,25 +61,25 @@
         app:destination="@id/topFragment" />
     <fragment
         android:id="@+id/followPagerFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.following.FollowPagerFragment" />
+        android:name="com.github.twitchjordan.ui.following.FollowPagerFragment" />
     <fragment
         android:id="@+id/followMediaFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.following.FollowMediaFragment" />
+        android:name="com.github.twitchjordan.ui.following.FollowMediaFragment" />
     <fragment
         android:id="@+id/savedPagerFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.saved.SavedPagerFragment" />
+        android:name="com.github.twitchjordan.ui.saved.SavedPagerFragment" />
     <fragment
         android:id="@+id/savedMediaFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.saved.SavedMediaFragment" />
+        android:name="com.github.twitchjordan.ui.saved.SavedMediaFragment" />
     <fragment
         android:id="@+id/searchPagerFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.search.SearchPagerFragment" />
+        android:name="com.github.twitchjordan.ui.search.SearchPagerFragment" />
     <action
         android:id="@+id/action_global_searchPagerFragment"
         app:destination="@id/searchPagerFragment" />
     <fragment
         android:id="@+id/gamePagerFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.game.GamePagerFragment">
+        android:name="com.github.twitchjordan.ui.game.GamePagerFragment">
         <argument
             android:name="gameId"
             app:argType="string"
@@ -120,7 +120,7 @@
         app:destination="@id/gamePagerFragment" />
     <fragment
         android:id="@+id/gameMediaFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.game.GameMediaFragment">
+        android:name="com.github.twitchjordan.ui.game.GameMediaFragment">
         <argument
             android:name="gameId"
             app:argType="string"
@@ -161,7 +161,7 @@
         app:destination="@id/gameMediaFragment" />
     <fragment
         android:id="@+id/channelPagerFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.channel.ChannelPagerFragment">
+        android:name="com.github.twitchjordan.ui.channel.ChannelPagerFragment">
         <argument
             android:name="channelId"
             app:argType="string"
@@ -197,7 +197,7 @@
         app:destination="@id/channelPagerFragment" />
     <fragment
         android:id="@+id/teamFragment"
-        android:name="com.github.andreyasadchy.xtra.ui.team.TeamFragment">
+        android:name="com.github.twitchjordan.ui.team.TeamFragment">
         <argument
             android:name="teamName"
             app:argType="string"

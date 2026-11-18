@@ -2,7 +2,7 @@ name: Build and TV UI test
 
 on:
   push:
-    branches-ignore: [ master ]
+    branches: [ master, work/fire-tv-stability-adblock ]
   workflow_dispatch:
     inputs:
       steps:
@@ -15,9 +15,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: tv-test-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
     - name: Checkout sources
       uses: actions/checkout@v7
@@ -30,6 +35,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v6
       with:
         cache-provider: 'basic'
+        cache-read-only: false
     - name: Check the translations of the TV strings
       run: python3 .github/scripts/check_translations.py
     - name: Build with Gradle
@@ -54,7 +60,6 @@ jobs:
         sudo udevadm trigger --name-match=kvm
     - name: Run Android TV emulator UI script
       uses: reactivecircus/android-emulator-runner@v2
-      continue-on-error: true
       with:
         api-level: 34
         target: android-tv

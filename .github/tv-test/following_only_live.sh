@@ -1,7 +1,7 @@
 #!/bin/bash
 # Prepares the app for the "Following with only the Live tab" case:
 # Following tabs = only Live, and a local follow of a channel that is live right now (no account on the emulator).
-PKG=com.github.razenfr.xtratv.debug
+PKG=com.github.twitchjordan.debug
 OUT=${1:-tv-out}
 W=$(mktemp -d)
 adb shell am force-stop $PKG
@@ -42,5 +42,5 @@ adb shell "run-as $PKG sh -c 'cat > databases/database'" < $W/database
 adb shell "run-as $PKG sh -c 'cat > shared_prefs/${PKG}_preferences.xml'" < $W/prefs.xml
 adb shell run-as $PKG cat shared_prefs/${PKG}_preferences.xml | grep -i follow
 adb logcat -c
-adb shell am start -n $PKG/com.github.andreyasadchy.xtra.ui.main.MainActivity
+adb shell am start -n $PKG/com.github.twitchjordan.ui.main.MainActivity
 sleep 15

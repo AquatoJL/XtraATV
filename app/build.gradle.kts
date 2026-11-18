@@ -21,12 +21,14 @@ android {
             storePassword = "123456"
         }
     }
-    namespace = "com.github.andreyasadchy.xtra"
+    // Internal source namespace retained for the existing Kotlin packages and generated bindings.
+    // The installable app identity is the separate applicationId below.
+    namespace = "com.github.twitchjordan"
     compileSdk = 37
 
     defaultConfig {
-        // own package: installs next to the original Xtra
-        applicationId = "com.github.razenfr.xtratv"
+        // Unique application ID for Twitch by Jordan
+        applicationId = "com.github.twitchjordan"
         minSdk = 24
         targetSdk = 37
         versionCode = 159
@@ -132,7 +134,7 @@ dependencies {
 apollo {
     @Suppress("ApolloEndpointNotConfigured")
     service("service") {
-        packageName.set("com.github.andreyasadchy.xtra.graphql")
+        packageName.set("com.github.twitchjordan.graphql")
     }
 }
 

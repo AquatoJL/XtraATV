@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Xtra"
+rootProject.name = "Twitch by Jordan"
 include(":app")

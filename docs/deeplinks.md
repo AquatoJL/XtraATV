@@ -1,15 +1,15 @@
-# Xtra TV — Deep Links & Intent Reference
+# Twitch by Jordan — Deep Links & Intent Reference
 
-Xtra TV registers `android.intent.action.VIEW` for `twitch.tv` and `*.twitch.tv` (`http` and `https`), allowing external apps, custom Android TV launchers (Projectivy, FLauncher, ATV Launcher), button remappers (**tvQuickActions**, **Button Mapper**), **Home Assistant**, and **ADB** scripts to open channels, live streams, VODs, clips, and categories directly.
+Twitch by Jordan registers `android.intent.action.VIEW` for `twitch.tv` and `*.twitch.tv` (`http` and `https`), allowing external apps, custom Android TV launchers (Projectivy, FLauncher, ATV Launcher), button remappers (**tvQuickActions**, **Button Mapper**), **Home Assistant**, and **ADB** scripts to open channels, live streams, VODs, clips, and categories directly.
 
 ## Application Identifiers
 
 | Field | Value |
 | :--- | :--- |
-| **Package name (Release)** | `com.github.razenfr.xtratv` |
-| **Package name (Debug)** | `com.github.razenfr.xtratv.debug` |
-| **Main Activity** | `com.github.andreyasadchy.xtra.ui.main.MainActivity` |
-| **Component** | `com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity` |
+| **Package name (Release)** | `com.github.twitchjordan` |
+| **Package name (Debug)** | `com.github.twitchjordan.debug` |
+| **Main Activity** | `com.github.twitchjordan.ui.main.MainActivity` |
+| **Component** | `com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity` |
 | **Intent Action** | `android.intent.action.VIEW` |
 
 ---
@@ -91,34 +91,34 @@ https://www.twitch.tv/directory/game/League%20of%20Legends?tl=English
 ### ADB (`adb shell am start`)
 
 ```bash
-# Launch Xtra TV on the Home screen
-adb shell am start -n com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity
+# Launch Twitch by Jordan on the Home screen
+adb shell am start -n com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity
 
 # Start playing a live stream immediately
 adb shell am start -a android.intent.action.VIEW \
   -d "https://www.twitch.tv/kamet0?xtratv_play=1" \
-  -n com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity
+  -n com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity
 
 # Open a streamer's channel page (VODs & clips)
 adb shell am start -a android.intent.action.VIEW \
   -d "https://www.twitch.tv/kamet0" \
-  -n com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity
+  -n com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity
 
 # Open a VOD at 1h 05m 30s
 adb shell am start -a android.intent.action.VIEW \
   -d "https://www.twitch.tv/videos/2123456789?t=1h5m30s" \
-  -n com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity
+  -n com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity
 
 # Open a category
 adb shell am start -a android.intent.action.VIEW \
   -d "https://www.twitch.tv/directory/category/just-chatting" \
-  -n com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity
+  -n com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity
 ```
 
 ### Android Intent URI (tvQuickActions, Button Mapper, Custom Launchers)
 
 ```text
-intent://www.twitch.tv/kamet0?xtratv_play=1#Intent;scheme=https;action=android.intent.action.VIEW;package=com.github.razenfr.xtratv;component=com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity;end
+intent://www.twitch.tv/kamet0?xtratv_play=1#Intent;scheme=https;action=android.intent.action.VIEW;package=com.github.twitchjordan;component=com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity;end
 ```
 
 ### Home Assistant (Android TV Remote / ADB Integration)
@@ -133,7 +133,7 @@ data:
   activity: "https://www.twitch.tv/kamet0?xtratv_play=1"
 ```
 
-Or targeting Xtra TV explicitly via `androidtv.adb_command`:
+Or targeting Twitch by Jordan explicitly via `androidtv.adb_command`:
 
 ```yaml
 action: androidtv.adb_command
@@ -143,5 +143,5 @@ data:
   command: >-
     am start -a android.intent.action.VIEW
     -d "https://www.twitch.tv/kamet0?xtratv_play=1"
-    -n com.github.razenfr.xtratv/com.github.andreyasadchy.xtra.ui.main.MainActivity
+    -n com.github.twitchjordan/com.github.twitchjordan.ui.main.MainActivity
 ```
