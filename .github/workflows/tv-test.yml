@@ -2,7 +2,7 @@ name: Build and TV UI test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, work/fire-tv-stability-adblock ]
   workflow_dispatch:
     inputs:
       steps:
